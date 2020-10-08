@@ -1,0 +1,101 @@
+.editor-content
+    font-size: get-vw(22px)
+    line-height: 1.35
+    color: #6a6a6f
+
+.editor-content > p
+    font-size: get-vw(22px) !important
+    line-height: 1.35!important
+    color: #6a6a6f!important
+
+
+.editor-content > p img
+    max-width: 100%
+
+.editor-content > ol,
+.editor-content > ul
+    list-style: none
+    margin: 0
+    width: 70%
+    padding: 0
+    font-size: get-vw(22px)
+
+.editor-content > ul li + li,
+.editor-content > ol li + li
+    margin-top: get-vw(10px)
+
+.editor-content > ul li
+    position: relative
+    line-height: 1.3
+    padding-left: get-vw(25px)
+
+.editor-content > ul li:after
+    position: absolute
+    top: 0
+    width: get-vw(10px)
+    height: get-vw(10px)
+    left: 0
+    background: $mainBg
+    border-radius: 50%
+    content: ''
+    display: block
+    transform: translate(0, 100%)
+
+.editor-content > ol
+    counter-reset: section
+
+.editor-content > ol > li:before
+    counter-increment: section
+    content: counter(section) ". "
+    color: $mainText
+    font-weight: $semiBold
+    padding-right: get-vw(5px)
+    font-size: get-vw(22px)
+
+
+.editor-content .table-wrap
+    max-width: 100%
+    overflow: hidden
+
+
+.editor-content > .table-wrap
+    max-width: 100%
+    width: 100%
+    +tableScrollbar
+    overflow: auto
+
+.editor-content > .table-wrap table,
+.editor-content > .table-wrap td
+    border-color: $mainText
+    border-collapse: collapse
+
+
+.editor-content > .table-wrap th,
+.editor-content > .table-wrap thead td
+    background: $lightGreen
+    text-transform: uppercase
+    font-weight: $semiBold
+    +letterSpace(50)
+    font-size: get-vw(14px)
+    padding: get-vw(20px) get-vw(20px) get-vw(15px)
+
+
+.editor-content > .table-wrap table td
+    font-size: get-vw(16px)
+    padding: get-vw(15px) get-vw(20px)
+
+
+.editor-content > blockquote
+    padding-left: get-vw(60px)
+    width: 80%
+
+.editor-content > blockquote p
+    font-style: italic
+
+.default-page .editor-wrap
+    padding: get-vw(100px) get-vw(270px)
+
+.editor-content .gallery-wrap .gallery-wrap
+    display: flex
+    align-items: flex-start
+

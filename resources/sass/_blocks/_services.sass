@@ -1,0 +1,73 @@
+.service-wrap
+    padding: get-vw(90px) get-vw(170px)
+    background: #f8f8f8
+
+.service-wrap .block-title
+    font-size: get-vw(40px)
+    text-align: left
+    justify-content: flex-start
+    width: 100%
+
+.service-slider
+    width: 100%
+    margin: get-vw(50px) 0
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+
+.service-slide
+    transition: 0.3s ease
+    background: #ffffff
+    border-radius: get-vw(10px)
+    box-shadow: 0 3px 6px rgba(0,0,0,.15)
+    padding: get-vw(30px)
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    width: 29%
+    margin-left: 6%
+    margin-top: get-vw(30px)
+
+.service-slide:hover
+    box-shadow: 0 3px 10px rgba(0,0,0,.2)
+
+
+.service-slide:nth-child(3n+1)
+    margin-left: 0
+
+
+.service-icon
+    display: flex
+    align-items: center
+    justify-content: center
+    width: get-vw(60px)
+    height: get-vw(60px)
+    flex-shrink: 0
+    margin-bottom: get-vw(20px)
+
+.service-icon img
+    width: 100%
+    height: 100%
+    object-fit: contain
+
+.service-name
+    font-size: get-vw(24px)
+    margin-bottom: get-vw(20px)
+
+    font-weight: $bold
+
+.service-description
+    font-size: get-vw(20px)
+    opacity: 0.6
+    line-height: 1.3
+
+.service-slide a.more
+    margin-top: get-vw(30px)
+    font-size: get-vw(14px)
+
+.service-slide.orange a.more
+    background:  #ffbd00
+
+.service-slide.blue a.more
+    background: #04458F
+

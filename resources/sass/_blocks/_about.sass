@@ -1,0 +1,36 @@
+.about-wrap
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: get-vw(100px) get-vw(340px)
+
+.about-wrap .about-title
+    font-size: get-vw(42px)
+    text-align: center
+    display: flex
+    justify-content: center
+    position: relative
+    color: #000
+    font-weight: $bold
+    margin-bottom: get-vw(65px)
+
+.about-wrap .about-subtitle
+    font-size: get-vw(25px)
+    text-align: center
+    color: rgba(0,0,0,.6)
+    line-height: 1.25
+
+.about-wrap .more
+    margin-top: get-vw(40px)
+
+.about-wrap .about-title:after
+    content: ''
+    display: block
+    position: absolute
+    background: $mainBg
+    width: get-vw(200px)
+    height: 2px
+    top: 100%
+    left: 50%
+    transform: translate(-50%, get-vw(15px))
+

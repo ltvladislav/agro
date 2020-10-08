@@ -1,0 +1,104 @@
+.slick-slide > div,
+.slick-slide .slide-wrap
+    height: 100%
+    width: 100%
+
+.main-slider .slick-slide
+    margin: 0 1px
+
+.slider-arrow
+    width: get-vw(60px)
+    height: get-vw(60px)
+    background: $lightBlue
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    bottom: 0
+    z-index: 99
+    cursor: pointer
+    transition: 0.3s ease
+    +mediaSize(1024)
+        width: 55px
+        height: 55px
+
+.slider-arrow:hover
+    opacity: 0.9
+
+
+.slider-arrow svg
+    width: get-vw(12px)
+    height: get-vw(24px)
+    +mediaSize(1024)
+        width: 15px
+        height: 15px
+
+.slider-prev
+    right: 65%
+    bottom: get-vw(60px)
+    +mediaSize(1024)
+        bottom: 55px
+
+.inner-slider .slider-prev
+    right: 101%
+    left: auto
+    transform: translate(0, -50%)
+
+.inner-slider .slider-arrow
+    top: 50%
+    bottom: auto
+    background: $blue55
+    transition: opacity 0.3s ease
+
+
+.inner-slider .slider-arrow.slick-disabled
+    opacity: 0
+    pointer-events: none
+
+
+.inner-slider .slider-next
+    left: 101%
+    right: auto
+    transform: translate(0, -50%)
+
+.slider-next
+    right: get-calc-vw(65%, '-', 60px)
+    +mediaSize(1024)
+        right: calc(65% - 55px)
+
+.slider-prev svg
+    transform: rotate(180deg)
+
+.custom-pagination
+    width: 3px
+    display: flex
+    height: get-vw(40px)
+    background: $lightBlue
+    transition: 0.4s ease
+    opacity: 0.4
+    +mediaSize(1024)
+        height: 25px
+
+.slick-active .custom-pagination
+    height: get-vw(75px)
+    opacity: 0.8
+    +mediaSize(1024)
+        height: 65px
+
+.slick-dots
+    position: absolute
+    bottom: 1%
+    right: get-calc-vw(100%, '+', 70px)
+    display: flex
+    flex-direction: column
+    list-style: none
+
+.slick-dots li
+    cursor: pointer
+
+.slick-dots li + li
+    margin-top: get-vw(10px)
+    +mediaSize(1024)
+        margin-top: 10px
+
+

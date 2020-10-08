@@ -1,0 +1,175 @@
+header
+    //position: fixed
+    top: 0
+    left: 0
+    right: 0
+    width:  100%
+    z-index: 9999
+    background: #fff
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    transition: 0.3s ease
+    box-shadow: 0 3px 5px rgba(0,0,0,.2)
+
+header.scrolled
+    box-shadow: 0 3px 10px rgba(0,0,0,.15)
+
+.logo-wrap
+    display: flex
+    flex-shrink: 0
+    width: get-vw(270px)
+    height: get-vw(90px)
+    margin-right: get-vw(40px)
+    margin-left: get-vw(50px)
+
+    +mediaSize(1024)
+        width: 80px
+        height: 70px
+        margin-right: auto
+
+.logo-wrap img
+    width: 100%
+    height: 100%
+    object-fit: contain
+
+header nav
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    margin-right: auto
+    +mediaSize(1024)
+        display: none
+
+.nav-item
+    position: relative
+
+.sub-nav
+    position: absolute
+    top: 100%
+    left: 0
+    background: #fff
+    box-shadow: 0 2px 4px rgba(0,0,0,.1)
+    transform: translate(0, 30%)
+    opacity: 0
+    pointer-events: none
+    transition: 0.3s ease
+
+.sub-nav-item
+    display: flex
+    color: #777
+    +letterSpace(75)
+    line-height: 1.2
+    white-space: nowrap
+    font-size: get-vw(17px)
+    padding:  get-vw(10px) get-vw(20px)
+    transition: 0.5s ease
+    opacity: 0.7
+
+.sub-nav-item:hover
+    opacity: 1
+
+
+.sub-nav-item:last-child
+    padding-bottom: get-vw(15px)
+
+.sub-nav-item:first-child
+    padding-top: get-vw(15px)
+
+.nav-link
+    //font-family: $raleway
+    display: flex
+    color: #777
+    position: relative
+    transition: 0.3s ease
+    line-height: 1.3
+    +letterSpace(75)
+    font-size: get-vw(18px)
+    padding: get-vw(15px) get-vw(30px) get-vw(15px)
+
+.nav-item:hover .nav-link
+    color: #054015
+
+
+.nav-item:hover .sub-nav
+    transform: translate(0, 0)
+    opacity: 1
+    pointer-events: all
+//
+//
+//.user-nav-item
+//    display: flex
+//    +mediaSize(desktop)
+//        height: get-vw(35px)
+//        width: get-vw(30px)
+//    +mediaSize(float)
+//        height: get-vw(35px)
+//        width: get-vw(30px)
+//    +mediaSize(1200)
+//        height: get-vw(35px)
+//        width: get-vw(30px)
+
+.header-socials
+    display: flex
+    align-items: center
+    width: 100%
+    justify-content: space-between
+    border-bottom: 1px solid #c1c1c1
+    padding: get-vw(10px) get-vw(50px) get-vw(10px) get-vw(35px)
+
+.header-socials-list
+    display: flex
+    align-items: center
+
+.header-socials-list a
+    display: flex
+    align-items: center
+    font-size: get-vw(14px)
+
+.header-socials-list a + a
+    margin-left: get-vw(25px)
+
+.header-socials-list a img
+    width: get-vw(20px)
+    opacity: 0.7
+    height: get-vw(20px)
+
+.header-socials-list a img + span
+    margin-left:  get-vw(10px)
+
+.header-login
+    display: flex
+    margin-left: auto
+
+.header-login a
+    display: flex
+    align-items: center
+    justify-content: center
+    width: get-vw(25px)
+    height: get-vw(25px)
+
+.header-nav
+    display: flex
+    align-items: center
+
+    padding-right: get-vw(50px)
+
+.main-header
+    width: 100%
+    border-left: 1px solid #c1c1c1
+
+.languages,
+.additional-langs
+    display: flex
+    align-items: center
+
+.languages a
+    margin-right: get-vw(5px)
+    text-transform: uppercase
+
+
+
+
+
+
+

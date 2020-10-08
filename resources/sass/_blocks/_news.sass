@@ -1,0 +1,177 @@
+.news-container
+    padding: get-vw(60px) get-vw(170px)
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.news-container a.more
+    margin-top: get-vw(60px)
+
+.news-wrap
+    display: flex
+    margin-top: get-vw(40px)
+    justify-content: center
+
+.news-card
+    border-radius: get-vw(15px)
+    box-shadow: 0 3px 6px rgba(0,0,0,.15)
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    width: 30%
+    transition: 0.3s ease
+    cursor: pointer
+
+.news-card + .news-card
+    margin-left: 5%
+
+.news-card:hover
+    box-shadow: 0 4px 10px rgba(0,0,0,.25)
+
+.news-image
+    width: 100%
+    height: get-vw(250px)
+    display: flex
+
+.news-image img
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.new-card-content
+    padding: get-vw(25px)
+    display: flex
+    align-items: flex-start
+    flex-direction: column
+    height: 100%
+
+.new-additional-info
+    display: flex
+    align-items: center
+
+    margin-bottom: get-vw(15px)
+
+.new-additional-item
+    display: flex
+    align-items: center
+
+.new-additional-item p
+    font-size: get-vw(14px)
+
+.new-additional-item + .new-additional-item
+    margin-left: get-vw(15px)
+
+.news-info-icon
+    width: get-vw(20px)
+    height: get-vw(20px)
+    margin-right: get-vw(10px)
+
+.news-info-icon img
+    width: 100%
+    height: 100%
+    object-fit: contain
+
+.new-name
+    font-size: get-vw(22px)
+    font-weight: $semiBold
+    margin-bottom: get-vw(15px)
+    text-transform: uppercase
+    line-height: 1.2
+
+.new-description
+    font-size: get-vw(18px)
+    font-weight: $regular
+    margin-bottom: get-vw(25px)
+    line-height: 1.3
+
+.new-card-content a.more
+    font-size: get-vw(14px)
+    margin-right: auto
+    margin-top: auto
+
+.news-wrapper
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+
+.news-wrapper .news-card
+    margin-top: get-vw(60px)
+
+.news-wrapper .news-card:nth-child(3n+1)
+    margin-left: 0
+
+.category-list
+    display: flex
+    align-items: center
+
+.category-item
+    cursor: pointer
+    font-size: get-vw(20px)
+
+.category-item + .category-item
+    margin-left:  get-vw(20px)
+
+
+.page-header
+    position: relative
+    width: 100%
+    height: get-vw(400px)
+
+.page-header-content
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #fff
+    width: 100%
+    height: 100%
+    position: relative
+    z-index: 11
+
+
+.page-header-content h1
+    font-size: get-vw(55px)
+
+.page-header img
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.page-header-overlay
+    background: $blue40
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    z-index: 2
+
+
+.post-show .page-heading
+    padding: 0 get-vw(100px)
+
+.post-show .page-heading h1
+    font-size: get-vw(35px)
+    line-height: 1.2
+    font-weight: $bold
+    text-align: center
+
+.post-show .editor-wrap
+    width: 80%
+    margin-left: auto
+    margin-right: auto
+
+.pagination-wrap
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    margin-top: get-vw(60px)
+
+.post-show .post-date
+    font-size: get-vw(20px)
+    text-align: right
+    color: #b0b0b0
+    padding: get-vw(15px) 0
+
+
+

@@ -1,0 +1,88 @@
+
+body, html
+    font-weight: $regular
+    //font-family: $raleway
+    text-size-adjust: none
+    font-family: $segoe
+    color: $mainText
+    line-height: 1
+    font-size-adjust: none
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    +mediaSize(desktop)
+        font-size: get-vw(16px)
+    +mediaSize(float)
+        font-size: get-vw(16px)
+    +mediaSize(1200)
+        font-size: 14px
+    +mediaSize(700)
+        font-size: 12px
+
+*
+    -webkit-text-size-adjust: none
+
+body.compensate-for-scrollbar
+    margin-right: 0
+
+body
+    +scrollbar
+
+input, button
+    border-radius: 0
+    -webkit-appearance: none
+
+a
+    outline: none
+    color: $mainText
+
+.edge .svg_container,
+.ie .svg_container
+    position: fixed
+    bottom: 20px
+    left: 0
+    top: 0
+
+.svg_container
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 0
+    height: 0
+    opacity: 0
+    visibility: hidden
+    z-index: -1
+
+a[href]
+    outline: none
+    text-decoration: none
+    transition: 0.3s ease
+
+a.nav-link[href],
+a:-webkit-any-link,
+a.news-slider-item[href]
+    text-decoration: none
+
+main
+    overflow: hidden
+
+.container-main
+    padding: get-vw(50px) get-vw(170px)
+    +mediaSize(1024)
+        padding: 40px 50px
+    +mediaSize(750)
+        padding: 20px
+
+h1
+    font-size: get-vw(35px)
+
+    margin-bottom: get-vw(45px)
+
+
+.container-250
+    padding: get-vw(80px) get-vw(250px)
+    +mediaSize(1024)
+        padding: 30px 100px
+
+.hidden
+    display: none
+    visibility: hidden
+    pointer-events: none

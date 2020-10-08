@@ -1,0 +1,16 @@
+
+#RewriteEngine On
+
+# Handle Authorization Header
+#RewriteCond %{HTTP_HOST} ^(www.)?dorada.edorada.org/$
+#RewriteCond %{HTTP_HOST} ^(www.)?dorada.edorada.org$
+
+# Redirect Trailing Slashes If Not A Folder...
+#RewriteCond %{REQUEST_URI} !^/public/
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+#RewriteRule ^(.*)$ /public/$1
+#RewriteRule ^(.*)$ /public/index.php [L]
+

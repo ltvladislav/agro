@@ -1,0 +1,107 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal)
+    @font-face
+        font-family: $font-family
+        src: url('#{$file-path}.eot')
+        src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype')
+        font-weight: $weight
+        font-style: $style
+        font-display: swap
+
+$layout-width: 1920
+@function get-vw($px)
+    $vw-context: ($layout-width*.01) * 1px
+
+    @return ($px/$vw-context) * 1vw
+
+@function get-vh($px)
+    $vw-context: (760*.01) * 1px
+    @return ($px/$vw-context) * 1vh
+
+@function get-calc-vw($percent, $operator, $px)
+    $vw-context: ($layout-width*.01) * 1px
+    @return unquote(('calc(' + $percent + ' ' + $operator+ ' ' + ($px/$vw-context) * 1vw +')'))
+
+
+//использование данного миксина  +mediaSize(sm)
+@mixin mediaSize($media)
+    @if $media == desktop
+        @media (min-width: 1601px)
+            @content
+    @if $media == float
+        @media (min-width: 1201px) and (max-width: 1600px)
+            @content
+    @else
+        @media (max-width: $media+px)
+            @content
+
+@mixin letterSpace($spacing)
+    letter-spacing: ($spacing / 1000) * 1em
+
+@mixin placeholder
+    &::-webkit-input-placeholder
+        @content
+    &:-moz-placeholder
+        @content
+    &::-moz-placeholder
+        @content
+    &:-ms-input-placeholder
+        @content
+
+@mixin scrollbar
+    &::-webkit-scrollbar
+        width: 5px
+        height: 5px
+    &::-webkit-scrollbar-track
+        background: #fff
+    &::-webkit-scrollbar-thumb
+        background: #135048
+
+@mixin scrollbarThin
+    &::-webkit-scrollbar
+        width: 2px
+        height: 2px
+    &::-webkit-scrollbar-track
+        background: #fff
+        width: 80%
+        margin-left: auto
+        margin-right: auto
+    &::-webkit-scrollbar-thumb
+        background: #135048
+
+@mixin tableScrollbar
+    &::-webkit-scrollbar
+        width: 5px
+        height: 5px
+    &::-webkit-scrollbar-track
+        background: rgba(0, 0, 0, 0)
+    &::-webkit-scrollbar-thumb
+        background: $mainText
+
+
+// ^^^^^^^^^^^^^^^^^^^ my functions
+
+
+//percent minus vw
+@function percent-vw($percent, $px)
+    $vw-context: ($layout-width*.01) * 1px
+    @return unquote(('calc('+$percent * 1%+ ' - ' + ($px/$vw-context) * 1vw +')'))
+
+//percent plus vw
+@function percent-p-vw($percent, $px)
+    $vw-context: ($layout-width*.01) * 1px
+    @return unquote(('calc('+$percent * 1%+ ' + ' + ($px/$vw-context) * 1vw +')'))
+
+$w-min: 1201px
+// $w-max: 2560px
+@mixin adaptive($media)
+    @if $media == float
+        @media (min-width: $w-min)
+            @content
+    @else
+        @media (max-width: $media * 1px)
+            @content
+
+
+@mixin print()
+    @media print
+        @content

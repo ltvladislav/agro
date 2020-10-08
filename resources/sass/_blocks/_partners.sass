@@ -1,0 +1,75 @@
+.partners-wrap
+    padding: get-vw(100px)  get-vw(170px)
+
+.block-title
+    width: 65%
+    position: relative
+    text-align: center
+    font-size: get-vw(30px)
+    padding-bottom: get-vw(15px)
+    margin-bottom: get-vw(40px)
+    font-weight: $bold
+    color: #000
+    margin-left: auto
+    margin-right: auto
+
+.block-title.left
+    font-size: get-vw(40px)
+    width: 100%
+    text-align: left
+    position: relative
+
+.block-title:after
+    content: ''
+    position: absolute
+    top: 100%
+    left: 50%
+    width: get-vw(160px)
+    height: 2px
+    background: $mainBg
+    transform: translate(-50%, 0)
+
+.block-title.left:after
+    left: 0
+    transform: none
+
+.partners-slider
+    position: relative
+
+.partners-wrap .slide-arrow
+    position: absolute
+    color: $mainText
+    top: 50%
+    opacity: 0.5
+    cursor: pointer
+    transform: translate(-50%, 0)
+    width: get-vw(45px)
+    transition: 0.3s ease
+    height: get-vw(45px)
+
+.partners-wrap .slide-arrow:hover
+    opacity: 1
+
+.partners-wrap .slide-arrow.prev
+    right: 102%
+    transform: rotate(180deg) translate(-50%, 0)
+
+.partners-wrap .slide-arrow.next
+    left: 102%
+
+.partners-wrap .partner-item
+    height: get-vw(250px)
+    margin: get-vw(20px)
+    border-radius: get-vw(10px)
+    display: flex
+    box-shadow: 0 2px 4px rgba(0,0,0,.15)
+    align-items: center
+    justify-content: center
+
+.partner-item:hover
+    box-shadow: 0 5px 10px rgba(0,0,0,.2)
+
+.partners-wrap .partner-item img
+    width: 100%
+    height: 100%
+    object-fit: contain

@@ -1,0 +1,47 @@
+.advantages-wrap
+    padding-top: get-vw(50px)
+    flex-direction: column
+
+.advantages-wrap,
+.advantages-list
+    display: flex
+    justify-content: center
+    width: 100%
+
+.advantage-item
+    width: 30%
+    margin-top: get-vw(60px)
+    display: flex
+    align-items: center
+    flex-direction: column
+
+.advantage-item + .advantage-item
+    margin-left: 5%
+
+.advantage-item:nth-child(3n+1)
+    margin-left: 0
+
+.advantage-icon
+    width: get-vw(80px)
+    height: get-vw(80px)
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-bottom: get-vw(20px)
+
+.advantage-icon img
+    width: 100%
+    height: 100%
+    object-fit: contain
+
+.advantage-name
+    font-size: get-vw(24px)
+    font-weight: $semiBold
+    margin-bottom: get-vw(10px)
+
+.advantage-description
+    line-height: 1.4
+    text-align: center
+    font-size: get-vw(18px)
+    color: rgba(0,0,0,.6)
+
