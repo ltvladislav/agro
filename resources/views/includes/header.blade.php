@@ -1,6 +1,6 @@
 <header>
     <a href="/" class="logo-wrap">
-        <img src="{{ asset('/image/dorad.png') }}" alt="">
+        <img src="{{ asset('/image/agrologo.png') }}" alt="">
     </a>
     <div class="main-header">
         @include('includes.header-socials')
