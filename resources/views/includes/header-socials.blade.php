@@ -22,7 +22,7 @@
     </div>
 
     <div class="header-login">
-        <a href="#">
+        <a href="@guest{{ route('login') }}@else{{ '/home' }}@endguest">
             <svg> <use xlink:href="#user"> </use></svg>
         </a>
     </div>

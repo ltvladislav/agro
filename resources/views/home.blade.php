@@ -14,16 +14,16 @@
                         </div>
                     @endif
 
-                    @php
-                        $post = App\Models\Pages\Page::with('translations')->first();
-                    @endphp
-
-                    {{ app()['request']->segment(1) }}
-                        <p>{{ $post->getTranslatedAttribute('title') }}</p>
                     You are logged in!
 
-                        <script async src="https://cse.google.com/cse.js?cx=012010229175199226711:g79fumb7agq"></script>
-                        <div class="gcse-search"></div>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="btn btn-primary">
+                                Вихід
+                            </button>
+                        </form>
+
+
                 </div>
             </div>
         </div>
