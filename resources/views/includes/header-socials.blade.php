@@ -27,5 +27,5 @@
         </a>
     </div>
 
-    @include('includes.languages')
+
 </div>

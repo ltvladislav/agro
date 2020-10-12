@@ -17,11 +17,11 @@
 
     [infoblock code="opis-golovna"]
 
-    @include('infoblock.services')
+    [infoblock code="servisi-2-golovna"]
 
-    [infoblock code="nashi-partneri-golovna"]
+{{--    [infoblock code="nashi-partneri-golovna"]--}}
 
-    [infoblock code="servisi-golovna"]
+{{--    [infoblock code="servisi-golovna"]--}}
 
     @include('posts.preview')
 

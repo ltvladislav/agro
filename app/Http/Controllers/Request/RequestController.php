@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Request;
 
 use App\Http\Controllers\Controller;
 use App\Models\Request\Request;
+use App\Providers\RouteServiceProvider;
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Http\Request as BaseRequest;
 
@@ -15,7 +16,7 @@ class RequestController extends Controller
         return view('requests.create')->withShortcodes();
     }
     public function index() {
-        $requests = Request::myCustomer()->get();
+        $requests = Request::myCustomer()->orderBy('created_at', 'desc')->get();
         return view('requests.index', [
             'requests' => $requests
         ])->withShortcodes();
@@ -40,7 +41,8 @@ class RequestController extends Controller
         //dd($entity);
         $entity->save();
 
-        return "Успех";
+        return redirect()
+            ->route('requests');
     }
 
     public function saveFiles(BaseRequest $request)

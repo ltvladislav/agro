@@ -19,21 +19,72 @@
         </div>
     </div>
 
-    <div class="editor-wrap">
-        <div class="editor-content">
+    <div class="editor-wrap all-response">
 
-            @foreach($requests as $request)
-                @foreach(json_decode($request->request_file) as $file)
-                    <a class="fileType" target="_blank"
-                       href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}"
-                       data-file-name="{{ $file->original_name }}">
-                        {{ $file->original_name ?: '' }}
-                    </a>
-                @endforeach
-                {{ $request->id . ' - ' . $request->status . ' - ' . $request->customer_id . ' - ' .
-                 $request->performer_id . ' - ' . $request->response_file . ' - ' . $request->request_comment . ' - '}}
-            @endforeach
-        </div>
+        @foreach($requests as $request)
+            <div class="request-card">
+                <div class="card-heading">
+                    <p class="info-title">Статус запиту: {{ $request->status}}</p>
+                    <p class="date">{{ $request->created_at->format('m/d/Y') }}</p>
+                </div>
+
+                <div class="card-content">
+                    <div class="content">
+                        @if($request->request_comment)
+                            <div class="info-column">
+                                <p>Коментар запиту:</p>
+                                <p>{{ $request->request_comment }}</p>
+                            </div>
+                        @endif
+                        @if($request->response_comment)
+                            <div class="info-column">
+                                <p>Коментар відповіді:</p>
+                                <p>{{ $request->response_comment }}</p>
+                            </div>
+                        @endif
+                    </div>
+
+                    <div class="files">
+                        @foreach(json_decode($request->request_file) as $file)
+                            <a class="request-file file" target="_blank"
+                               href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}"
+                               data-file-name="{{ $file->original_name }}">
+
+                                <span class="icon">
+                                    <svg><use xlink:href="#file-response"></use></svg>
+                                </span>
+
+                                <span class="file-name">Файл запиту</span>
+
+                            </a>
+                        @endforeach
+
+
+                        @if($request->response_file )
+
+                            @foreach(json_decode($request->response_file) as $file)
+                                <a class="response-file file" target="_blank"
+                                   href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}"
+                                   data-file-name="{{ $file->original_name }}">
+
+                                    <span class="icon">
+                                        <svg><use xlink:href="#file"></use></svg>
+                                    </span>
+
+                                    <span class="file-name">Файл відповіді</span>
+
+                                </a>
+                            @endforeach
+                        @endif
+
+                    </div>
+                </div>
+            </div>
+
+
+        @endforeach
+
+            <a class="more" href="{{ route('requests-create') }}">Створити новий запит</a>
     </div>
 
 @stop

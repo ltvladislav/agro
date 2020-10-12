@@ -1,0 +1,114 @@
+.container-form
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    padding: get-vw(120px) get-vw(680px)
+
+.form-title
+    width: 100%
+    text-align: center
+    margin-bottom: get-vw(55px)
+    font-size: get-vw(32px)
+    text-transform: uppercase
+    font-weight: $semiBold
+    +letterSpace(50)
+
+.container-form form
+    width: 100%
+
+form label
+    width: 100%
+    display: flex
+
+    flex-direction: column
+    align-items: center
+
+form label + label
+    margin-top: get-vw(50px)
+
+form label input,
+form label textarea
+    width: 100%
+    border: none
+    border-bottom: 1px solid #000
+
+    padding-bottom: get-vw(5px)
+
+form label textarea
+    height: get-vw(100px)
+    max-width: 100%
+
+form label input,
+form label input::placeholder,
+form label textarea,
+form label textarea::placeholder
+    font-size: get-vw(24px)
+
+form button[type="submit"]
+    margin: get-vw(50px) auto
+
+
+.custom-check
+    width: 100%
+    max-width: 100%
+    display: flex
+    justify-content: center
+    position: relative
+
+    margin-top: get-vw(50px)
+
+.custom-check .square-check
+    border: 1px solid #000
+    display: flex
+    position: relative
+    flex-shrink: 0
+    width: get-vw(20px)
+    height: get-vw(20px)
+
+    margin-right: get-vw(20px)
+
+
+.custom-check label
+    width: 100%
+    display: flex
+    align-items: flex-start
+    cursor: pointer
+    flex-direction: row
+
+.custom-check p
+    font-size: get-vw(20px)
+
+form .custom-check input[type=checkbox]
+    display: none
+
+.custom-check input[type=checkbox]:checked + .square-check:before
+    opacity: 1
+
+.custom-check .square-check:before
+    transition: .3s ease
+    content: ''
+    position: absolute
+    background: #000
+    opacity: 0
+    top: 2px
+    bottom: 2px
+    left: 2px
+    right: 2px
+
+form .forgot
+    text-align: center
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    font-size: get-vw(20px)
+
+form .forgot + .forgot
+    margin-top: get-vw(10px)
+
+label .invalid-feedback
+    font-size:  get-vw(16px)
+    color: darkred
+
+    padding-top: get-vw(5px)
