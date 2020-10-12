@@ -46,11 +46,11 @@
                 {{ __('Register') }}
             </a>
 
-            @if (Route::has('password.request'))
-                <a class="forgot" href="{{ route('password.request') }}">
-                    {{ __('Forgot Your Password?') }}
-                </a>
-            @endif
+{{--            @if (Route::has('password.request'))--}}
+{{--                <a class="forgot" href="{{ route('password.request') }}">--}}
+{{--                    {{ __('Forgot Your Password?') }}--}}
+{{--                </a>--}}
+{{--            @endif--}}
 
         </form>
     </div>
