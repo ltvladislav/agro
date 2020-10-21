@@ -1,15 +1,17 @@
 @extends('layouts.app')
 
+@section('title', __('auth.login'))
+
 @section('content')
 
     <div class="container-form">
-        <p class="form-title">{{ __('Login') }}</p>
+        <p class="form-title">{{ __('auth.login') }}</p>
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
 
             <label for="email">
-                <input id="email" type="email" placeholder="{{ __('E-Mail Address') }}" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <input id="email" type="email" placeholder="{{ __('auth.email') }}" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                 @error('email')
                 <span class="invalid-feedback" role="alert">
@@ -20,7 +22,7 @@
 
 
             <label for="password" >
-                <input id="password" placeholder="{{ __('Password') }}" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                <input id="password" placeholder="{{ __('auth.password') }}" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                 @error('password')
                 <span class="invalid-feedback" role="alert">
@@ -34,16 +36,16 @@
                 <label>
                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                     <span class="square-check"></span>
-                    <p>{{ __('Remember Me') }}</p>
+                    <p>{{ __('auth.remember-me') }}</p>
                 </label>
             </div>
 
             <button type="submit" class="more">
-                {{ __('Login') }}
+                {{ __('auth.log-in') }}
             </button>
 
             <a class="forgot" href="{{ route('register') }}">
-                {{ __('Register') }}
+                {{ __('auth.register') }}
             </a>
 
 {{--            @if (Route::has('password.request'))--}}

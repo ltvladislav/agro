@@ -24,7 +24,7 @@
         @foreach($requests as $request)
             <div class="request-card">
                 <div class="card-heading">
-                    <p class="info-title">Статус запиту: {{ $request->status}}</p>
+                    <p class="info-title">Статус запиту: {{ __("request.STATUS_".$request->status) }}</p>
                     <p class="date">{{ $request->created_at->format('m/d/Y') }}</p>
                 </div>
 
